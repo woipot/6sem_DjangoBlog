@@ -8,8 +8,9 @@ from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 
 
-def post_list(request):
-    posts = Post.objects.order_by('created_date')
+def post_list(request, pk=0):
+    topic = get_object_or_404(Topic, pk=pk)
+    posts = topic.topics.all()
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
