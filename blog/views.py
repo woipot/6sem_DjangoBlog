@@ -74,3 +74,13 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+
+def error_404(request, exception):
+        data = {}
+        return render(request, 'blog/error404.html', data)
+
+
+def error_500(request):
+    data = {}
+    return render(request, 'blog/error500.html', data)
