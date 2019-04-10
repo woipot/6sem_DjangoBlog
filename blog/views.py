@@ -11,7 +11,7 @@ from django.shortcuts import redirect
 def post_list(request, pk=0):
     topic = get_object_or_404(Topic, pk=pk)
     posts = topic.topics.all()
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/index.html', {'posts': posts})
 
 
 def post_detail(request, pk):
