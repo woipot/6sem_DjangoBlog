@@ -3,8 +3,17 @@ from django.db import models
 from django.utils import timezone
 
 
+class Topic(models.Model):
+    title = models.CharField(max_length=20, default="sandbox")
+    description = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    topic = models.ForeignKey('blog.Topic', on_delete=models.CASCADE, related_name='topics', default=0)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
