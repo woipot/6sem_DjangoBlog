@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href=" {% static "css/blog.css" %}" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
 <body>
     <div class="page-header" >
@@ -28,5 +29,15 @@
             </div>
         </div>
     </div>
+<script type="text/javascript">
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+//or
+/*
+var math = document.getElementById("MathExample");
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+-- see http://docs.mathjax.org/en/latest/advanced/typeset.html?highlight=typeset
+*/
+</script>
 </body>
 </html>
