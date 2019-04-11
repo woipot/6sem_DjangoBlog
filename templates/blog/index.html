@@ -71,24 +71,9 @@
   <div class="container">
     <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-    {% for post in posts %}
-    <div class="post-preview">
-      <a href="{% url 'post_detail' pk=post.pk %}">
-        <h2 class="post-title">
-          {{ post.title }}
-        </h2>
-        <h3 class="post-subtitle">
-          {{ post.text|slice:":50" }}...
-        </h3>
-      </a>
-      <p class="post-meta">Posted by :
-        <a>{{ post.author }}</a>
-        {{ post.published_date }}
-        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-      </p>
+        {% block content %}
+        {% endblock %}
     </div>
-    {% endfor %}
-</div>
     </div>
   </div>
 
