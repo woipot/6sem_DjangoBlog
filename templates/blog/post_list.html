@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'blog/index.html' %}
+
+{% block content %}
+    {% for post in posts %}
+    <div class="post-preview">
+      <a href="{% url 'post_detail' pk=post.pk %}">
+        <h2 class="post-title">
+          {{ post.title }}
+        </h2>
+        <h3 class="post-subtitle">
+          {{ post.text|slice:":50" }}...
+        </h3>
+      </a>
+      <p class="post-meta">Posted by :
+        <a>{{ post.author }}</a>
+        {{ post.published_date }}
+        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+      </p>
+    </div>
+    {% endfor %}
+{% endblock %}
