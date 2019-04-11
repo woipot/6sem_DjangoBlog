@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5p^isk)pb$7c@lbwi@6=5#0+f*u5+&t18&w(f_b9j#ml@^zd!8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -127,12 +127,12 @@ STATIC_URL = '/static/'  # URL для шаблонов
 STATICFILES_DIRS = (
 
     os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, 'assets/img')
 
 )
 
 STATICFILES_FINDERS = (
 
     'django.contrib.staticfiles.finders.FileSystemFinder',
-
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )

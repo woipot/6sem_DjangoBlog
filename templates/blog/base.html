@@ -1,42 +1,14 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Woipot Blog</title>
 
-    <{% load bootstrap3 %}
-    <script src="{% bootstrap_jquery_url %}"></script>
-    {% bootstrap_javascript %}
-    {% bootstrap_css %}
-
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 </head>
 <body>
-   <!-- Классы navbar и navbar-default (базовые классы меню) -->
-<nav class="navbar navbar-default">
-  <!-- Контейнер (определяет ширину Navbar) -->
-  <div class="container-fluid">
-    <!-- Заголовок -->
-    <div class="navbar-header">
-      <!-- Кнопка «Гамбургер» отображается только в мобильном виде (предназначена для открытия основного содержимого Navbar) -->
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- Бренд или название сайта (отображается в левой части меню) -->
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-    <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
-    <div class="collapse navbar-collapse" id="navbar-main">
-      <!-- Содержимое основной части -->
-    </div>
-  </div>
-</nav>
-
     <div class="page-header" >
 
         {% if user.is_authenticated %}
@@ -63,5 +35,4 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
 -- see http://docs.mathjax.org/en/latest/advanced/typeset.html?highlight=typeset
 */
 </script>
-</body>
-</html>
+</body></html>
