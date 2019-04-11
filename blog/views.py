@@ -32,7 +32,7 @@ def post_new(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.post = form.cleaned_data['topic']
+            post.topic = form.cleaned_data['topic']
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
