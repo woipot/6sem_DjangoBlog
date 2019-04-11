@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 {% extends 'blog/index.html' %}
 
+{% block head %}
+
+ <h1>{{ topic.title }}</h1>
+    <span class="subheading">Blog for smart people</span>
+
+{% endblock %}
+
 {% block content %}
     {% for post in posts %}
     <div class="post-preview">
