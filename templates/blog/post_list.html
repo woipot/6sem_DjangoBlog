@@ -4,7 +4,6 @@
 {% block head %}
 
  <h1>{{ topic.title }}</h1>
-    <span class="subheading">Blog for smart people</span>
 
 {% endblock %}
 
@@ -19,11 +18,6 @@
           {{ post.text|slice:":50" }}...
         </h3>
       </a>
-      <p class="post-meta">Posted by :
-        <a>{{ post.author }}</a>
-        {{ post.published_date }}
-        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-      </p>
     </div>
     {% endfor %}
 {% endblock %}
